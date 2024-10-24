@@ -30,6 +30,11 @@ def process_data(input_file="./data/raw_data", output_filepath="./data/processed
         # Create folder if necessary
         create_folder_if_necessary(output_filepath)
 
+        # Fill NAN values
+
+        X_train = fill_nan_values(X_train)
+        X_test =  fill_nan_values(X_train)
+
         # Save dataframes to their respective output file paths
         save_dataframes(X_train, X_test, y_train, y_test, output_filepath)
 
@@ -43,6 +48,11 @@ def split_data(df):
     feats = df.drop(['silica_concentrate'], axis=1)
     X_train, X_test, y_train, y_test = train_test_split(feats, target, test_size=0.3, random_state=42)
     return X_train, X_test, y_train, y_test
+
+def fill_nan_values(df):
+    # Fill NaN values
+    df = df.fillna(df.mode().iloc[0])
+    return df
 
     
 def create_folder_if_necessary(output_folderpath):
