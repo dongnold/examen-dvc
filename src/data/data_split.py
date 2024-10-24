@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 from pathlib import Path
-import click
 import logging
 from sklearn.model_selection import train_test_split
 from check_structure import check_existing_file, check_existing_folder
@@ -21,7 +20,7 @@ def main(input_filepath="./data/raw_data", output_filepath= "./data/processed_da
     process_data(input_filepath_raw, output_filepath)    
 
 
-def process_data(input_file="./data/raw_data", output_filepath="./data/processed_data"):
+def process_data(input_file, output_filepath):
         df = import_dataset(input_file, sep=',')
 
         # Split data into training and testing sets
