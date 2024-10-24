@@ -21,7 +21,7 @@ def main(input_filepath="./data/raw_data", output_filepath= "./data/processed_da
 
 
 def process_data(input_file, output_filepath):
-        df = import_dataset(input_file, sep=',')
+        df = import_dataset(input_file, sep=',', index_col='date')
 
         # Split data into training and testing sets
         X_train, X_test, y_train, y_test = split_data(df)
@@ -33,6 +33,9 @@ def process_data(input_file, output_filepath):
 
         X_train = fill_nan_values(X_train)
         X_test =  fill_nan_values(X_train)
+
+        X_train['date'] = pd.to_datetime(X_train['date'])
+        X_test['date'] = pd.to_datetime(X_test['date'])
 
         # Save dataframes to their respective output file paths
         save_dataframes(X_train, X_test, y_train, y_test, output_filepath)
