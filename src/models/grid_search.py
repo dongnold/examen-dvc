@@ -80,6 +80,8 @@ def findBestModel(X_train, y_train, output_filepath="./models"):
     for i, j in outer_scores.items():
         print(i, '-  moyenne des scores :', j.mean(), ', écart type des scores :', j.std())
 
+    gridcvs['GBR'].fit(X_train, y_train)
+
     bestmodel = gridcvs['GBR'].best_estimator_
 
     persistModel(bestmodel)
