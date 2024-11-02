@@ -23,7 +23,7 @@ def main(filepath="./data/processed_data"):
     normalize_data(input_Xtest, 'X_test',  filepath)
 
 def normalize_data(input_file, dataset_name,  output_filepath):
-    df = import_dataset(input_file, sep=',', index_col='date')
+    df = import_dataset(input_file, sep=',',index_col='date')
 
     df.info()
 

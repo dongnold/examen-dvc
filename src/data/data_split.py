@@ -32,10 +32,10 @@ def process_data(input_file, output_filepath):
         # Fill NAN values
 
         X_train = fill_nan_values(X_train)
-        X_test =  fill_nan_values(X_train)
+        X_test =  fill_nan_values(X_test)
 
-        X_train['date'] = pd.to_datetime(X_train['date'])
-        X_test['date'] = pd.to_datetime(X_test['date'])
+        #X_train['date'] = pd.to_datetime(X_train['date'])
+        #X_test['date'] = pd.to_datetime(X_test['date'])
 
         # Save dataframes to their respective output file paths
         save_dataframes(X_train, X_test, y_train, y_test, output_filepath)
@@ -69,7 +69,7 @@ def save_dataframes(X_train, X_test, y_train, y_test, output_folderpath):
     for file, filename in zip([X_train, X_test, y_train, y_test], ['X_train', 'X_test', 'y_train', 'y_test']):
         output_filepath = os.path.join(output_folderpath, f'{filename}.csv')
         if check_existing_file(output_filepath):
-            file.to_csv(output_filepath, index=False)
+            file.to_csv(output_filepath, index=True)
         
             
             

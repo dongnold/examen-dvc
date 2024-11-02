@@ -16,7 +16,7 @@ def main(filepath="./data/processed_data"):
         cleaned data ready to be analyzed (saved in../preprocessed).
     """
     logger = logging.getLogger(__name__)
-    logger.info('Normalizing data')
+    logger.info('Finding the best model')
 
 
     input_Xtrain = f"{filepath}/X_train_scaled.csv"

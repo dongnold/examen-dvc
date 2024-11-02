@@ -6,11 +6,9 @@ import pickle
 
 
 def main(filepath="./data/processed_data"):
-    """ Runs data processing scripts to turn raw data from (../raw) into
-        cleaned data ready to be analyzed (saved in../preprocessed).
-    """
+    
     logger = logging.getLogger(__name__)
-    logger.info('Normalizing data')
+    logger.info('Training model')
 
 
     input_Xtrain = f"{filepath}/X_train_scaled.csv"
