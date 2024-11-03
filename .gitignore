@@ -1,6 +1,4 @@
 /env
-/clean_data.csv
 models/bestmodel.pkl
 .DS_Store
 models/trainedmodel.pkl
-/data
