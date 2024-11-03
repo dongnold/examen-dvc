@@ -1,4 +1,3 @@
 /env
-models/bestmodel.pkl
 .DS_Store
-models/trainedmodel.pkl
+/models
