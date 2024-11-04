@@ -56,11 +56,14 @@ stages:
   gridsearch:
     cmd: python src/models/grid_search.py
     deps:
-    - path: data/processed_data
+    - path: data/processed_data/X_train_scaled.csv
       hash: md5
-      md5: e64a4fdd0b58dbe446c7a3cdba18c71d.dir
-      size: 681086
-      nfiles: 6
+      md5: 9c94b9c8532968ec8c7fd14d97483b4a
+      size: 219447
+    - path: data/processed_data/y_train.csv
+      hash: md5
+      md5: 2d74f29e3adc4b9f42018c482a12dab7
+      size: 48135
     - path: src/models/grid_search.py
       hash: md5
       md5: 6787961419c90e73c01ba51831f2c808
@@ -81,6 +84,10 @@ stages:
       hash: md5
       md5: 2d74f29e3adc4b9f42018c482a12dab7
       size: 48135
+    - path: models/bestmodel.pkl
+      hash: md5
+      md5: 2c8140452ea5505192b860a91ba9d414
+      size: 241962
     - path: src/models/training.py
       hash: md5
       md5: 3cf18f3737517ea1228eeedbd6e1e6d1
@@ -101,6 +108,10 @@ stages:
       hash: md5
       md5: a12e8e76ce4f3448161ac980472ee34b
       size: 20622
+    - path: models/trainedmodel.pkl
+      hash: md5
+      md5: b5a78ee730e3de41fdc11af2cd918d68
+      size: 242150
     - path: src/models/evaluate.py
       hash: md5
       md5: 142857673faafb991ca6ecd96ef533f2
